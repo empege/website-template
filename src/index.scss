@@ -1,0 +1,61 @@
+@import "./styles/mixins.scss";
+
+// RESETS
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  // height: 300vh;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// HELPERS
+.h-wrapper {
+  width: 100%;
+  margin: 0 auto;
+
+  @include mq-phone-s-up {
+    background: green;
+  }
+  @include mq-phone-l-up {
+    background: red;
+  }
+  @include mq-tablet-s-up {
+    background: yellow;
+  }
+  @include mq-tablet-l-up {
+    background: blue;
+  }
+  @include mq-desktop-s-up {
+    background: purple;
+  }
+  @include mq-desktop-l-up {
+    background: black;
+  }
+}
+
+@import "./components/molecules/Navigation/navigation";
