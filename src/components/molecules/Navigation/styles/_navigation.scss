@@ -1,4 +1,13 @@
 .m-navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  @include mq-tablet-s-up {
+    position: relative;
+  }
+
   &__top-nav {
     width: 100%;
     background-color: black;
@@ -9,27 +18,51 @@
   }
 
   &__main-nav {
-    height: 80px;
+    display: none;
     border-bottom: 1px solid black;
     box-shadow: 0 1px 5px 1px black;
-    display: flex;
+    flex-direction: column;
     padding: 0 20px;
+    background-color: white;
+
+    & > * {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    @include mq-tablet-s-up {
+      display: flex;
+      height: 80px;
+      flex-direction: row;
+    }
+
+    &--active {
+      display: flex;
+    }
   }
 
   &__nav-items {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    margin: 20px 0 30px 0;
+
+    @include mq-tablet-s-up {
+      justify-content: center;
+      flex-direction: row;
+      margin: 0;
+    }
   }
 
   &__nav-item {
-    display: flex;
-    align-items: center;
+    margin: 10px 0;
+
+    @include mq-tablet-s-up {
+      margin: 0;
+    }
 
     a {
-      display: flex;
-      align-items: center;
       color: black;
       font-size: 20px;
       margin: 0 10px;
@@ -43,6 +76,11 @@
   }
 
   &__logo-wrapper {
+    display: none;
+
+    @include mq-tablet-s-up {
+      display: block;
+    }
   }
 
   &__logo-image {
@@ -51,9 +89,15 @@
 
   &__social-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    @include mq-tablet-s-up {
+      margin-left: 30px;
+      margin-bottom: 0;
+      justify-content: flex-end;
+    }
   }
 
   &__social-item {

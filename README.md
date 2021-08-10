@@ -13,3 +13,7 @@ To align horizintally, please use <Wrapper columns={8} align={end}/> Choose betw
 ## Layout
 
 Using Bootstrap 5
+
+## Dependecies
+
+Hamburger menu icon: https://jonsuh.com/hamburgers/

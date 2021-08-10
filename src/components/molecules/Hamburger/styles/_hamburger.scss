@@ -1,0 +1,12 @@
+@import "../../../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../../../../../node_modules/hamburgers/_sass/hamburgers/base";
+
+.m-navigation .hamburger {
+  position: absolute;
+  top: 30px;
+  right: 0;
+
+  @include mq-tablet-s-up {
+    display: none;
+  }
+}
